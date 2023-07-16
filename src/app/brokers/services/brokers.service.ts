@@ -15,7 +15,7 @@ export class BrokersService {
   }
 
   getAllBrokers(): Observable<Broker[]> {
-    return this.http.get<Broker[]>('/api/courses');
+    return this.http.get<Broker[]>('http://127.0.0.1:3000/brokers');
   }
 
 }

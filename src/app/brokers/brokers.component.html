@@ -1,4 +1,17 @@
-<p>brokers works!</p>
-<tr *ngFor="let broker of brokers$ | async">
-    <td>{{ broker.name }}</td>
-</tr>
+<div class="row">
+    <div class="col">
+        <h1>Brokers</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="row" *ngFor="let broker of brokers$ | async">
+            <div class="col">
+                {{ broker.name }}
+            </div>
+            <div class="col">
+                {{ broker.website }}
+            </div>
+        </div>
+    </div>
+</div>

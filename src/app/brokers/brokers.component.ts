@@ -11,12 +11,11 @@ import { State } from '../reducers';
   styleUrls: ['./brokers.component.scss'],
 })
 export class BrokersComponent implements OnInit {
-  brokers$: Observable<Broker[]> | undefined;
+  brokers$: Observable<Broker[]> | undefined = this.store.select(selectAllBrokers);
 
   constructor(private store: Store<State>) {}
 
   ngOnInit() {
-    console.log('BrokersComponent ngOnInit');
-    this.brokers$ = this.store.select(selectAllBrokers);
+    this.store.dispatch({ type: '[Brokers] Load Brokers' });
   }
 }
